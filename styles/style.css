@@ -224,7 +224,7 @@
 }
 
 .like-icon {
-  display: block;  
+  display: block;
   padding-top: 0.25rem;
 }
 
@@ -336,7 +336,7 @@
 .dialog__wrapper {
   display: flex;
   align-items: center;
-  column-gap: 1.25rem; 
+  column-gap: 1.25rem;
   font-family: var(--accent-font), sans-serif;
   font-size: 14px;
   line-height: 21px;
