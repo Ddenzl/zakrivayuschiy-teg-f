@@ -117,9 +117,8 @@
 }
 
 .theme-menu__button:focus-visible::after {
-  inline-size:100%; 
+  inline-size:100%;
 }
-
 
 /* -------------------------------------------------------- */
 .main {
@@ -141,7 +140,7 @@
 }
 
 .image-wrapper {
-  position: relative; 
+  position: relative;
 }
 
 .card__lable {
@@ -158,7 +157,6 @@
     -1px 1px 0px var(--shadow-lable), -1px -1px 0px var(--shadow-lable),
     1px 0px 0px var(--shadow-lable), 0px 1px 0px var(--shadow-lable),
     -1px 0px 0px var(--shadow-lable), 0px -1px 0px var(--shadow-lable);
-
   }
 
   @supports((text-stroke: 1px #fff) or (-webkit-text-stroke: 1px #fff)) {
@@ -175,7 +173,6 @@
   object-fit: cover;
   object-position: right;
   border-block: 2px solid var(--accent-color);
-
 }
 
 .filter-contrast {
@@ -217,7 +214,6 @@
   margin-bottom: 1.7rem;
 }
 
-
 .button-wrapper {
   margin-left: auto;
   padding-top: 1.523rem;
@@ -226,7 +222,6 @@
   align-items: center;
   column-gap: 0.25rem;
 }
-
 
 .like-icon {
   display: block;  
@@ -252,9 +247,6 @@
   border-color: var(--accent-color);
   transition: border-color .3s ease;
 }
-/* ------------------------------------------------------------ */
-
-/* -------------------------------------------------------------------- */
 
 .card__like-button {
   display: flex;
@@ -264,8 +256,7 @@
   background-color: transparent;
   position: relative;
   cursor: pointer;
-  padding: 0;
-  
+  padding: 0; 
 }
 
 .card__like-button::before,
@@ -329,7 +320,6 @@
   flex-wrap: wrap;
   margin: 0 auto;
 }
-
 
 .dialog {
   padding: 1.875rem;
@@ -402,10 +392,10 @@
   .dialog {
     padding: 2rem 2.375rem;
     min-inline-size: 21.063rem;
-    }
+  }
 
-    .dialog__button {
-      inline-size: 16.063rem;
-    }
+  .dialog__button {
+    inline-size: 16.063rem;
+  }
 }
 
