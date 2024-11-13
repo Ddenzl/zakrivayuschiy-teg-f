@@ -136,11 +136,12 @@
   font-variation-settings: var(--wght-title);
   font-size: 1.125rem;
   line-height: 1.481rem;
-  padding: 0.25rem 0.625rem;
+  padding: 0.3125rem 0.625rem 0;
 }
 
 .image-wrapper {
   position: relative;
+  border-block: 2px solid var(--accent-color);
 }
 
 .card__lable {
@@ -148,7 +149,7 @@
   font-family: var(--accent-font), sans-serif;
   font-size: 0.875rem;
   line-height: 0.875rem;
-  inset-block-start: 1.78rem;
+  inset-block-start: 1.7rem;
   inset-inline-end: 1.5625rem;
   color: var(--accent-color);
   opacity: 0.5;
@@ -172,7 +173,6 @@
   aspect-ratio: 1 / 1;
   object-fit: cover;
   object-position: right;
-  border-block: 2px solid var(--accent-color);
 }
 
 .filter-contrast {
@@ -207,7 +207,7 @@
   font-weight: var(--wght-text);
   font-size: 1.125rem;
   line-height: 1.313rem;
-  padding: 1.475rem 1.58rem 1.6rem;
+  padding: 1.5625rem 1.5725rem 1.45rem;
 }
 
 .card__content > p:not(:last-of-type) {
@@ -375,8 +375,12 @@
   }
 
   .title {
-    padding-bottom: 0.3rem;
-    line-height: 1.4rem;
+    padding-bottom: 0.2rem;
+    line-height: 1.367rem;
+  }
+
+  .card__content {
+    padding-block: 1.45rem;
   }
 
   .save__button {
