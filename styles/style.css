@@ -86,7 +86,7 @@
   animation: disabled-animation 0.5s ease-in-out infinite alternate;
 }
 
-@keyframes disabled-animation{
+@keyframes disabled-animation {
   from {
     translate: 0;
   }
@@ -233,7 +233,7 @@
   border: 2px solid transparent;
   height: 2.375rem;
   width: 2.688rem;
-  cursor: pointer;  
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -256,7 +256,7 @@
   background-color: transparent;
   position: relative;
   cursor: pointer;
-  padding: 0; 
+  padding: 0;
 }
 
 .card__like-button::before,
@@ -268,7 +268,7 @@
   left: 0;
   width: 0%;
   background-color: var(--accent-color);
-  transition: 0.5s ease-in-out;  
+  transition: 0.5s ease-in-out;
 }
 
 .card__like-button:focus,
