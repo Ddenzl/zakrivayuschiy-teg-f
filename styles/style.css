@@ -15,10 +15,11 @@
 */
 
 .page {
-  min-inline-size: 320px;
+  min-inline-size: 375px;
   min-block-size: 100dvb;
-  max-width: 1440px;
-  font-family: var(--main-font), sans-serif;
+  font-family: sans-serif;
+  font-size: 18px;
+  line-height: 21px;
   font-variation-settings: var(--wght-text);
   color: var(--accent-color);
   background-color: var(--main-color);
@@ -27,49 +28,95 @@
   background-size: cover;
 }
 
-.header {
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  align-items: center;
+@supports (font-variation-settings: normal) {
+  .page {
+    font-family: var(--main-font, sans-serif);
+  }
+}
+
+.button {
+  border: 2px solid var(--accent-color);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  color: var(--btn-text-color);
+  background-color: var(--main-color);
   font-family: var(--accent-font);
+  font-size: 14px;
+  line-height: 12.6px;
+  font-weight: 400;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.button::before {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+  background-color: var(--accent-color);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+}
+
+.button:hover::before {
+  transform: translateX(0);
+}
+
+.button:focus {
+  outline: none;
+  box-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.header {
+  font-family: var(--accent-font, fantasy);
   text-transform: uppercase;
   border: 2px solid var(--accent-color);
   max-inline-size: 43.75rem;
   background-color: var(--main-color);
-  margin: 6.25rem auto 6.28rem;
-
+  margin: 6.25rem auto 99px;
 }
 
 .logo {
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   line-height: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
-  margin-block-end: 1.3rem;
+  margin-block-end: 1.25rem;
   padding-block-start: 8.5rem;
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  outline: none;
 }
+
 .logo-title {
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
-  margin-block-end: 1.45rem;
+  line-height: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  margin-block-end: 27px;
+  text-align: center;
+}
+
+.header__theme-menu {
+  margin: 0 auto 24px;
+  padding-inline-start: 19px;
+  inline-size: min-content;
 }
 
 .theme-menu__list {
   display: flex;
   flex-direction: column;
-  gap: 0.625rem;
-  margin-block-end: 1.4rem;
-  align-items: flex-start;
-  padding-inline-start: 1.125rem;
-  position: relative;
+  gap: 0.875rem;
+}
+
+.theme-menu__item {
+  font-size: 0;
+  line-height: 0;
 }
 
 .theme-menu__button {
   text-transform: uppercase;
   background-color: transparent;
-  border: none;
   font-family: var(--accent-font), sans-serif;
   font-size: 0.875rem;
-  line-height: 1rem;
-  padding: 0;
+  line-height: 0.875rem;
   position: relative;
 }
 
@@ -84,15 +131,6 @@
   position: absolute;
   left: -20px;
   animation: disabled-animation 0.5s ease-in-out infinite alternate;
-}
-
-@keyframes disabled-animation {
-  from {
-    translate: 0;
-  }
-  to {
-    translate: 4px;
-  }
 }
 
 .theme-menu__button:hover {
@@ -110,38 +148,41 @@
   content: "";
   position:absolute;
   display: block;
-  width: 0%;
   height: 2px;
   background-color: var(--accent-color);
-  transition: width 0.3s ease-in-out;
+  transform: scale(0);
+  width: 100%;
+  transition: transform 0.3s ease-in-out;
+  transform-origin: left;
 }
 
 .theme-menu__button:focus-visible::after {
-  inline-size:100%;
+  transform: scale(1);
 }
 
 /* -------------------------------------------------------- */
 .main {
   margin: 0 auto 6.25rem;
-
   max-inline-size: 43.75rem;
 }
 
 .card {
   background-color: var(--main-color);
   border: 2px solid var(--accent-color);
-  margin-block-end: 3.125rem;
+  margin-block-end: 49px;
 }
+
 .title {
   font-variation-settings: var(--wght-title);
   font-size: 1.125rem;
   line-height: 1.481rem;
-  padding: 0.3125rem 0.625rem 0;
+  padding: 5px 10px 3px;
+  border-block-end: 2px solid var(--accent-color);;
 }
 
 .image-wrapper {
   position: relative;
-  border-block: 2px solid var(--accent-color);
+  margin: 0;
 }
 
 .card__lable {
@@ -173,6 +214,7 @@
   aspect-ratio: 1 / 1;
   object-fit: cover;
   object-position: right;
+  display: block;
 }
 
 .filter-contrast {
@@ -207,7 +249,8 @@
   font-weight: var(--wght-text);
   font-size: 1.125rem;
   line-height: 1.313rem;
-  padding: 1.5625rem 1.5725rem 1.45rem;
+  padding: 25px;
+  border-block-start: 2px solid var(--accent-color);;
 }
 
 .card__content > p:not(:last-of-type) {
@@ -236,7 +279,8 @@
   cursor: pointer;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
+  transition: border-color .3s ease;
 }
 
 .card__icon-button:focus {
@@ -244,59 +288,15 @@
 }
 
 .card__icon-button:focus-visible {
-  border-color: var(--accent-color);
-  transition: border-color .3s ease;
+  border-color: var(--accent-color); 
 }
 
 .card__like-button {
-  display: flex;
-  border: 2px solid var(--accent-color);
   inline-size: 8.125rem;
   block-size: 2.438rem;
-  background-color: transparent;
-  position: relative;
-  cursor: pointer;
-  padding: 0;
-}
-
-.card__like-button::before,
-.save__button::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0%;
-  background-color: var(--accent-color);
-  transition: 0.5s ease-in-out;
-}
-
-.card__like-button:focus,
-.save__button:focus {
-  outline: none;
-  box-shadow: 2px 2px 0 var(--accent-color);
-  transition: 0.3s ease-in-out;
-}
-
-.card__like-button:hover::before,
-.save__button:hover::before {
-  inline-size: 100%;
-  block-size: 100%;
-  transform: scale(1);
 }
 
 .button__text {
-  position: absolute;
-  top: 32%;
-  left: 28%;
-}
-
-.button__text,
-.save__button-text {
-  font-family: var(--accent-font);
-  font-size: 0.875rem;
-  line-height: 0.788rem;
-  color: var(--btn-text-color);
   mix-blend-mode: difference;
 }
 
@@ -312,11 +312,7 @@
   gap: 0.5rem;
   align-items: center;
   justify-content: center;
-  background-color: var(--main-color);
-  border: 2px solid var(--accent-color);
   padding: 0.938rem 1.25rem;
-  position: relative;
-  cursor: pointer;
   flex-wrap: wrap;
   margin: 0 auto;
 }
@@ -360,13 +356,13 @@
 
 
 @media (max-width: 376px) {
-  .header {
-    margin-block-start: 100px;
-  }
-
-  .logo {
+   .logo {
     padding-block-start: 7.54rem;
     margin-block-end: 1.22rem;
+  }
+
+  .logo-title {
+    margin-block-end: 25px;
   }
 
   .card__lable {
@@ -375,12 +371,13 @@
   }
 
   .title {
-    padding-bottom: 0.2rem;
-    line-height: 1.367rem;
+    padding-block-start: 7px;
+    line-height: 21.6px;
   }
 
+
   .card__content {
-    padding-block: 1.45rem;
+    padding: 25px 26px;
   }
 
   .save__button {
