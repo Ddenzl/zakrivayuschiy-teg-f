@@ -288,7 +288,7 @@
 }
 
 .card__icon-button:focus-visible {
-  border-color: var(--accent-color); 
+  border-color: var(--accent-color);
 }
 
 .card__like-button {
