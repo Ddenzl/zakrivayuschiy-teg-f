@@ -20,7 +20,7 @@
   font-family: sans-serif;
   font-size: 18px;
   line-height: 21px;
-  font-variation-settings: var(--wght-text);
+  font-variation-settings: 'wght' var(--wght-text);
   color: var(--accent-color);
   background-color: var(--main-color);
   background-image: var(--bg-image);
@@ -41,11 +41,11 @@
   cursor: pointer;
   color: var(--btn-text-color);
   background-color: var(--main-color);
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), sans-serif;
   font-size: 14px;
   line-height: 12.6px;
   font-weight: 400;
-  transition: box-shadow 0.3s ease-in-out;
+  transition: box-shadow 0.3s ease;
 }
 
 .button::before {
@@ -152,7 +152,7 @@
   background-color: var(--accent-color);
   transform: scale(0);
   width: 100%;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease;
   transform-origin: left;
 }
 
@@ -173,7 +173,7 @@
 }
 
 .title {
-  font-variation-settings: var(--wght-title);
+  font-variation-settings: 'wght' var(--wght-title);
   font-size: 1.125rem;
   line-height: 1.481rem;
   padding: 5px 10px 3px;
@@ -246,7 +246,6 @@
 }
 
 .card__content {
-  font-weight: var(--wght-text);
   font-size: 1.125rem;
   line-height: 1.313rem;
   padding: 25px;
